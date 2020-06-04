@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{DED89578-A7AB-4C5C-B419-2B3A02E8F144}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SmartWorkerClient/Program.cs">
+    <Files>
+      <File FileName="SmartWorkerClient/Program.cs" Line="21" Column="63" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SmartWorkerClient" expanded="True">
+            <Node name="SmartWorkerClient" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.SmartWorkerClient PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

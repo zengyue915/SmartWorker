@@ -1,0 +1,12 @@
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/bin/Debug/netcoreapp3.1/SmartWorkerClient.deps.json
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/bin/Debug/netcoreapp3.1/SmartWorkerClient.runtimeconfig.json
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/bin/Debug/netcoreapp3.1/SmartWorkerClient.runtimeconfig.dev.json
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/bin/Debug/netcoreapp3.1/SmartWorkerClient.dll
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/bin/Debug/netcoreapp3.1/SmartWorkerClient.pdb
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/obj/Debug/netcoreapp3.1/SmartWorkerClient.csprojAssemblyReference.cache
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/obj/Debug/netcoreapp3.1/SmartWorkerClient.AssemblyInfoInputs.cache
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/obj/Debug/netcoreapp3.1/SmartWorkerClient.AssemblyInfo.cs
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/obj/Debug/netcoreapp3.1/SmartWorkerClient.csproj.CoreCompileInputs.cache
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/obj/Debug/netcoreapp3.1/SmartWorkerClient.dll
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/obj/Debug/netcoreapp3.1/SmartWorkerClient.pdb
+/Users/itsyuezeng/Projects/SmartWorkerClient/SmartWorkerClient/obj/Debug/netcoreapp3.1/SmartWorkerClient.genruntimeconfig.cache
