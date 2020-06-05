@@ -2,15 +2,17 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.IO;
 
 public class SynchronousSocketClient
 {
+    private Socket soc;
 
-    public static void StartClient()
+    public void StartClient()
     {
         // Data buffer for incoming data.  
         byte[] bytes = new byte[1024];
-        private Socket soc;
+       
 
         // Connect to a remote device.  
         try
@@ -26,31 +28,29 @@ public class SynchronousSocketClient
             IPEndPoint remoteEP = new IPEndPoint(ipAddress, 65432);
 
             // Create a TCP/IP  socket.  
-            Socket sender = new Socket(ipAddress.AddressFamily,
+            soc = new Socket(ipAddress.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
 
             // Connect the socket to the remote endpoint. Catch any errors.  
             try
             {
-                sender.Connect(remoteEP);
+                soc.Connect(remoteEP);
 
                 Console.WriteLine("Socket connected to {0}",
-                    sender.RemoteEndPoint.ToString());
+                    soc.RemoteEndPoint.ToString());
 
                 // Encode the data string into a byte array.  
-                byte[] msg = Encoding.ASCII.GetBytes("This is a test<EOF>");
+                byte[] msg = Encoding.ASCII.GetBytes("Connect");
 
                 // Send the data through the socket.  
-                int bytesSent = sender.Send(msg);
+                int bytesSent = soc.Send(msg);
 
                 // Receive the response from the remote device.  
-                int bytesRec = sender.Receive(bytes);
-                Console.WriteLine("Echoed test = {0}",
+                int bytesRec = soc.Receive(bytes);
+                Console.WriteLine("Received from server = {0}",
                     Encoding.ASCII.GetString(bytes, 0, bytesRec));
 
-                // Release the socket.  
-                sender.Shutdown(SocketShutdown.Both);
-                sender.Close();
+               
 
             }
             catch (ArgumentNullException ane)
@@ -73,9 +73,65 @@ public class SynchronousSocketClient
         }
     }
 
+    public void CloseConnection()
+    {
+        byte[] msg = Encoding.ASCII.GetBytes("Close Connection");
+        int bytesSent = soc.Send(msg);
+        // Release the socket.  
+        soc.Shutdown(SocketShutdown.Both);
+        soc.Close();
+
+    }
+
+    public void requestVideo(int videoID)
+    {
+        byte[] bytes = new byte[1024];
+        Console.WriteLine("Requesting Video {0}", videoID.ToString());
+
+        string path = @"/Users/itsyuezeng/Projects/SmartWorkerClient/received.mp4";
+        // Encode the data string into a byte array.  
+        byte[] msg = Encoding.ASCII.GetBytes("Video 111");
+
+        // Send the data through the socket.  
+        int bytesSent = soc.Send(msg);
+        using (FileStream fs = File.Create(path))
+        {
+            int package = 0;
+            Console.Write("000000000");
+
+            while (true)
+            {
+                int length = soc.Receive(bytes);
+                Console.Write("package size {0} <EOF>", length.ToString());
+                if (length > 0)
+                {
+                    
+                    Console.WriteLine("Get package {0}", package.ToString());
+                    package += 1;
+
+                    fs.Write(bytes, 0, bytes.Length);
+
+                }
+                else
+                {
+                    break;
+                }
+                
+            }
+
+            Console.WriteLine("Done downloading video ", videoID.ToString());
+
+        }
+
+    }
+
+
+
     public static int Main(String[] args)
     {
-        StartClient();
+        var client = new SynchronousSocketClient { };
+        client.StartClient();
+        client.requestVideo(1000);
         return 0;
     }
 }
